@@ -1,0 +1,251 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: greet_with_name
+  examples: |
+    - hey bot
+    - hello rasa
+    - hi chatbot
+    - hello there rasa
+    - good morning bot
+    - good evening bot
+    - moin bot
+    - hey there bot
+    - let's go bot
+    - hey dude bot
+    - goodmorning chatbot
+    - goodevening bot
+    - good afternoon chatbot
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yeah
+    - yep
+    - Yes
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nope
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: emotion_review
+  examples: |
+    - good movie
+    - boring movie
+    - terrible experience
+    - waste of time
+- intent: mood
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - bad
+    - nervous
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - good
+    - fine
+    - well
+    - I am so sad
+- intent: sad_reasons
+  examples: |
+    - I feel so lonely.
+    - I have nobody to talk to.
+    - I am just sad, I am not sure about the reason.
+    - It feels like my life is pointless.
+    - I am so alone
+- intent: request_names
+  examples: |
+    - i want to give you my name
+    - give name
+    - you need to know my name
+    - do you know my name?
+- intent: out_of_scope
+  examples: |
+    - I want to call a cab
+    - tell me a joke
+    - Are you alive?
+    - Calculate 10+1?
+    - What is your favourite music?
+- intent: send_email
+  examples: |
+    - I want to to send email
+    - Send an email
+    - Send email
+    - email
+- intent: weather
+  examples: |
+    - What is the weather?
+    - Whats the weather like?
+    - How is the weather today?
+    - Weather
+- intent: city
+  examples: |
+    - Delhi
+    - Belfast
+    - London
+    - Newyork
+    - Dubai
+    - Sydney
+    - Belgium
+    - Tokyo
+    - Amsterdam
+- intent: query_knowledge_base
+  examples: |
+      - what [diseases]{"entity": "object_type", "value": "disease"} do you know about?
+      - list some [diseases]{"entity": "object_type", "value": "disease"}
+      - can you name some [diseases]{"entity": "object_type", "value": "disease"} please?
+      - do you know the [cure]{"entity": "attribute", "value": "cure"} of [Diabetes]{"entity": "disease"}
+      - what [cures]{"entity": "attribute", "value": "cure"} [Diabetes]{"entity": "disease"}
+      - does [Diabetes]{"entity": "disease"} have [cause]{"entity": "attribute", "value": "cause"}?
+      - what is the [cause]{"entity": "attribute", "value": "cause"} of [Diabetes]{"entity": "disease"}?
+      - what is the [definition]{"entity": "attribute", "value": "definition"} of [Diabetes]{"entity": "disease"}?
+      - what are the [precautions]{"entity": "attribute", "value": "precaution"} for [Diabetes]{"entity": "disease"}
+      - [Whom]{"entity": "attribute", "value": "doctor_type"} to consult for [Diabetes]{"entity":"disease"}
+      - What are the [symptoms]{"entity":"attribute","value":"symptoms"} of [Diabetes]{"entity":"disease"}
+      - How to [diagnose]{"entity":"attribute","value":"suggest_diagnosis"} [Diabetes]{"entity":"disease"}
+      - What are the [risks]{"entity":"attribute","value":"leads_to"} of [Diabetes] {"entity":"disease"}
+- synonym: disease
+  examples: |
+    - diseases
+    - illness
+    - sickness
+- synonym: Definition
+  examples: |
+    - Define
+    - Explain
+    - Tell me about
+    - What
+    - definition
+- synonym: cause
+  examples: |
+    - reason
+    - why
+    - origin
+- synonym: precaution
+  examples: |
+    - protection
+    - safeguard
+    - caution
+    - prevent
+- synonym: doctor type
+  examples: |
+    - type of doctor
+    - kind of doctor
+    - which doctor
+    - What doctor
+    - doctor
+    - doctors
+- synonym: symptoms
+  examples: |
+    - ailment
+    - disorder
+    - malady
+    - symptom
+- synonym: cure
+  examples: |
+    - heal
+    - restore
+    - revive
+    - make better
+- synonym: Diagnose
+  examples: |
+    - identify
+    - find out
+    - recognize
+- synonym: leads_to
+  examples: |
+    - give rise to 
+    - bring about
+    - complications
+    - risks
+    - leads to
+
+- lookup: disease
+  examples: |
+    - Diabetes
+    - Depression
+    - Schizophrenia
+    - Anxiety
+    - Acne
+    - PCOD
+    - Hormonal imbalance
+    - Common cold
+    - Bipolar disorder
+    - Thyroid
+
+- lookup: doctor_type
+  examples: |    
+    - General Practitioner and Endocrinologist
+    - Psychiatrist
+    - A psychiatrist experienced in treating schizophrenia usually guides treatment
+    - Dermatologists
+    - Gynecologist, Endocrinologist or Reproductive Endocrinologist
+    - Endocrinologist
+    - Family practice physicians, pediatricians, and internists
+    - Thyroidologists
+

@@ -1,0 +1,328 @@
+version: '3.1'
+intents:
+  - affirm
+  - bot_challenge
+  - deny
+  - emotion_review
+  - goodbye
+  - greet
+  - greet_with_name
+  - mood
+  - nlu_fallback
+  - out_of_scope
+  - request_names
+  - sad_reasons
+  - send_email
+  - weather
+  - city
+  - query_knowledge_base
+forms:
+  name_form:
+    required_slots:
+    - first_name
+    - last_name
+  email_form:
+    required_slots:
+    - email
+    - subject
+    - message
+actions:
+  - action_emotion
+  - utter_based_on_emotion
+  - utter_goodbye
+  - utter_greet
+  - utter_help_user
+  - utter_out_of_scope
+  - utter_play_music
+  - utter_play_song
+  - utter_slots_values
+  - utter_submit
+  - action_submit
+  - utter_city
+  - utter_temp
+  - action_climate
+  - action_query_knowledge_base
+  - utter_ask_rephrase
+entities:
+  - emotion
+  - object_type
+  - mention
+  - attribute
+  - disease
+  - falls
+  - physical activity
+  - name
+  - definition
+  - precaution
+  - doctor_type
+  - symptoms
+  - cure
+  - leads_to
+  - suggest_diagnosis
+  - type
+  - Endurance
+  - Strength
+  - Balance
+  - Flexibility
+  - duration
+  - start
+  - Benefits
+  - Motivation
+slots:
+  first_name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: name_form
+        requested_slot: first_name
+  last_name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: name_form
+        requested_slot: last_name
+  emotion:
+    type: categorical
+    influence_conversation: true
+    mappings:
+    - type: custom
+    values:
+    - positive
+    - neutral
+    - negative
+  email:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: email_form
+        requested_slot: email
+  subject:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: email_form
+        requested_slot: subject
+  message:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: email_form
+        requested_slot: message
+  # city:
+  #   type: text
+  #   mappings:
+  #   - type: from_text  
+  object_type:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: object_type
+  mention:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: mention
+  attribute:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: attribute  
+  disease:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: disease 
+  falls:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: falls  
+  physical activity:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: physical activity 
+  name:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: name 
+  definition:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: definition
+  precaution:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: precaution 
+  doctor_type:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: doctor_type 
+  symptoms:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: symptoms 
+  cure:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: cure 
+  leads_to:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: leads_to
+  suggest_diagnosis:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: suggest_diagnosis
+  type:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: type
+  Endurance:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: Endurance
+  Strength:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: Strength
+  Balance:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: Balance
+  Flexibitity:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: Flexibility
+  duration:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: duration
+  start:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: start
+  Benefits:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: Benefits
+  Motivation:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: Motivation
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  - text: Hey! How are you feeling today?
+  utter_ask_name:
+  - text: Hi there!, What is your name?
+  utter_greet_with_name:
+  - text: Hello {first_name}, How are you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great {first_name}, carry on!
+  utter_goodbye:
+  - text: Bye
+  # - text: Bye {first_name}
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_curious_happy:
+  - text: oh! I am happy to hear that. Would you tell me why? I am curious...
+  utter_curious_sad:
+  - text: oh! I am very sad to hear that. Would you tell me why? I am curious...
+  utter_call_help:
+  - text: Ok, If you need me please call and I will help you.
+  utter_help_user:
+  - text: Thank you for sharing this negative moment! I am sorry that you are feeling bad. Would you like to hear some music?
+  utter_ask_first_name:
+  - text: Hi there! What is your first name?
+  utter_ask_last_name:
+  - text: So {first_name}, what is your last name?
+  utter_submit:
+  - text: Ok {first_name}. Thanks!
+  utter_slots_values:
+  - text: I will remember that your name is {first_name} {last_name}!
+  utter_out_of_scope:
+  - text: Sorry, I dont understand!
+  utter_play_song:
+  - text: Ok,lets play your favourite music
+  utter_play_music:
+  - text: Ok,lets play your favourite tunes
+  utter_ask_email:
+  - text: Please provide the email ID whom you want to an email.
+  utter_ask_subject:
+  - text: Please provide the subject for your email.
+  utter_ask_message:
+  - text: Please provide the message for your email.
+  utter_city:
+  - text: "What is the city name?"
+  utter_temp:
+  - text: "{temp} at Belfast."
+  utter_based_on_emotion:
+  - condition:
+    - type: slot
+      name: emotion
+      value: positive
+    text: oh! I am happy to hear that. Enjoy!!
+  - condition:
+    - type: slot
+      name: emotion
+      value: negative
+    text: oh! I am sad to hear that. Would you tell me why? I am curious...
+  utter_ask_rephrase:
+  - text: "Sorry, I'm not sure I understand. Could you rephrase it?"
+  - text: "Could you please rephrase your message? I didn't quite get that."
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
