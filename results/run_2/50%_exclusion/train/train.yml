@@ -1,0 +1,155 @@
+version: "3.1"
+nlu:
+- intent: sad_reasons
+  examples: |
+    - It feels like my life is pointless.
+    - I have nobody to talk to.
+- intent: out_of_scope
+  examples: |
+    - tell me a joke
+    - Calculate 10+1?
+- intent: deny
+  examples: |
+    - not really
+    - no
+    - never
+- intent: affirm
+  examples: |
+    - that sounds good
+    - indeed
+    - yeah
+    - correct
+- intent: city
+  examples: |
+    - Delhi
+    - Belfast
+    - Newyork
+- intent: goodbye
+  examples: |
+    - goodbye
+    - bye
+    - see you later
+    - bye bye
+- intent: greet_with_name
+  examples: |
+    - hello rasa
+    - hello there rasa
+    - good afternoon chatbot
+    - hey bot
+    - goodmorning chatbot
+- intent: greet
+  examples: |
+    - hey dude
+    - hi
+    - let's go
+    - hello there
+    - moin
+    - hey
+- intent: query_knowledge_base
+  examples: |
+    - what is the [definition](attribute) of [Diabetes](disease)?
+    - How to [diagnose]{"entity": "attribute", "value": "suggest_diagnosis"} [Diabetes](disease)
+    - can you name some [diseases]{"entity": "object_type", "value": "disease"} please?
+    - [Whom]{"entity": "attribute", "value": "doctor_type"} to consult for [Diabetes](disease)
+    - What are the [symptoms](attribute) of [Diabetes](disease)
+- intent: mood
+  examples: |
+    - feeling like a king
+    - great
+    - well
+    - I'm so sad
+    - fine
+    - I am going to save the world
+    - I am feeling very good
+    - so perfect
+    - my day was horrible
+    - super stoked
+    - nervous
+    - unhappy
+    - so saad
+    - so so perfect
+- synonym: disease
+  examples: |
+    - diseases
+    - illness
+    - sickness
+- synonym: cure
+  examples: |
+    - cures
+    - heal
+    - restore
+    - revive
+    - make better
+- synonym: precaution
+  examples: |
+    - precautions
+    - protection
+    - safeguard
+    - caution
+    - prevent
+- synonym: doctor_type
+  examples: |
+    - Whom
+- synonym: suggest_diagnosis
+  examples: |
+    - diagnose
+- synonym: leads_to
+  examples: |
+    - risks
+    - give rise to
+    - bring about
+    - complications
+    - leads to
+- synonym: Definition
+  examples: |
+    - Define
+    - Explain
+    - Tell me about
+    - What
+    - definition
+- synonym: cause
+  examples: |
+    - reason
+    - why
+    - origin
+- synonym: doctor type
+  examples: |
+    - type of doctor
+    - kind of doctor
+    - which doctor
+    - What doctor
+    - doctor
+    - doctors
+- synonym: symptoms
+  examples: |
+    - ailment
+    - disorder
+    - malady
+    - symptom
+- synonym: Diagnose
+  examples: |
+    - identify
+    - find out
+    - recognize
+- lookup: disease
+  examples: |
+    - Diabetes
+    - Depression
+    - Schizophrenia
+    - Anxiety
+    - Acne
+    - PCOD
+    - Hormonal imbalance
+    - Common cold
+    - Bipolar disorder
+    - Thyroid
+- lookup: doctor_type
+  examples: |
+    - General Practitioner and Endocrinologist
+    - Psychiatrist
+    - A psychiatrist experienced in treating schizophrenia usually guides treatment
+    - Dermatologists
+    - Gynecologist, Endocrinologist or Reproductive Endocrinologist
+    - Endocrinologist
+    - Family practice physicians, pediatricians, and internists
+    - Thyroidologists

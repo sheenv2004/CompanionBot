@@ -67,8 +67,14 @@ pipeline:
   #  - name: FallbackClassifier
   #    threshold: 0.5
   #    ambiguity_threshold: 0.1
-  - name: "WhitespaceTokenizer"
-  - name: "RegexFeaturizer"
+  # - name: "WhitespaceTokenizer"
+  # - name: "RegexFeaturizer"
+  - name: SpacyNLP
+    model: "en_core_web_sm"
+  - name: SpacyTokenizer
+  - name: SpacyEntityExtractor
+  - name: SpacyFeaturizer
+    pooling: mean
   - name: "LexicalSyntacticFeaturizer"
   - name: "CountVectorsFeaturizer"
   - name: "CountVectorsFeaturizer"
@@ -76,6 +82,7 @@ pipeline:
     min_ngram: 1
     max_ngram: 4
   - name: "DIETClassifier"
+    random_seed: 1
     epochs: 100
   - name: "EntitySynonymMapper"
   - name: FallbackClassifier

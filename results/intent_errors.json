@@ -1,0 +1,338 @@
+[
+  {
+    "text": "see you around",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9495822787284851
+    }
+  },
+  {
+    "text": "never",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.43175026774406433
+    }
+  },
+  {
+    "text": "unhappy",
+    "intent": "mood",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.29713529348373413
+    }
+  },
+  {
+    "text": "not good",
+    "intent": "mood",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6719533205032349
+    }
+  },
+  {
+    "text": "nervous",
+    "intent": "mood",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.34083786606788635
+    }
+  },
+  {
+    "text": "feeling like a king",
+    "intent": "mood",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.24897730350494385
+    }
+  },
+  {
+    "text": "good",
+    "intent": "mood",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.6099922060966492
+    }
+  },
+  {
+    "text": "I am so alone",
+    "intent": "sad_reasons",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.8950921893119812
+    }
+  },
+  {
+    "text": "I want to call a cab",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "query_knowledge_base",
+      "confidence": 0.4617721736431122
+    }
+  },
+  {
+    "text": "Newyork",
+    "intent": "city",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6373841166496277
+    }
+  },
+  {
+    "text": "good afternoon",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "greet_with_name",
+      "confidence": 0.8468117713928223
+    }
+  },
+  {
+    "text": "good by",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.9959540367126465
+    }
+  },
+  {
+    "text": "indeed",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.47200852632522583
+    }
+  },
+  {
+    "text": "I don't think so",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.45118770003318787
+    }
+  },
+  {
+    "text": "well",
+    "intent": "mood",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.4786463677883148
+    }
+  },
+  {
+    "text": "I feel so lonely.",
+    "intent": "sad_reasons",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.6689279079437256
+    }
+  },
+  {
+    "text": "London",
+    "intent": "city",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.45958980917930603
+    }
+  },
+  {
+    "text": "let's go",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "greet_with_name",
+      "confidence": 0.8919621706008911
+    }
+  },
+  {
+    "text": "cu",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.6097169518470764
+    }
+  },
+  {
+    "text": "that sounds good",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.46550342440605164
+    }
+  },
+  {
+    "text": "great",
+    "intent": "mood",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.4506058394908905
+    }
+  },
+  {
+    "text": "I am going to save the world",
+    "intent": "mood",
+    "intent_prediction": {
+      "name": "query_knowledge_base",
+      "confidence": 0.4089698791503906
+    }
+  },
+  {
+    "text": "I am just sad, I am not sure about the reason.",
+    "intent": "sad_reasons",
+    "intent_prediction": {
+      "name": "query_knowledge_base",
+      "confidence": 0.7812626957893372
+    }
+  },
+  {
+    "text": "What is your favourite music?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "query_knowledge_base",
+      "confidence": 0.9113929271697998
+    }
+  },
+  {
+    "text": "Delhi",
+    "intent": "city",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9218560457229614
+    }
+  },
+  {
+    "text": "have a nice day",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.3388463854789734
+    }
+  },
+  {
+    "text": "correct",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.8977617621421814
+    }
+  },
+  {
+    "text": "not really",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.4180428385734558
+    }
+  },
+  {
+    "text": "It feels like my life is pointless.",
+    "intent": "sad_reasons",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.6253228187561035
+    }
+  },
+  {
+    "text": "tell me a joke",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.8653966188430786
+    }
+  },
+  {
+    "text": "Dubai",
+    "intent": "city",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.4578200876712799
+    }
+  },
+  {
+    "text": "Amsterdam",
+    "intent": "city",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.8914626240730286
+    }
+  },
+  {
+    "text": "good night",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.7384695410728455
+    }
+  },
+  {
+    "text": "y",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.4472658932209015
+    }
+  },
+  {
+    "text": "of course",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "query_knowledge_base",
+      "confidence": 0.706716775894165
+    }
+  },
+  {
+    "text": "don't like that",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.23258061707019806
+    }
+  },
+  {
+    "text": "my day was horrible",
+    "intent": "mood",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.8813643455505371
+    }
+  },
+  {
+    "text": "fine",
+    "intent": "mood",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5550351738929749
+    }
+  },
+  {
+    "text": "I have nobody to talk to.",
+    "intent": "sad_reasons",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.2639661729335785
+    }
+  },
+  {
+    "text": "Are you alive?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.6679245829582214
+    }
+  },
+  {
+    "text": "Sydney",
+    "intent": "city",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.46747541427612305
+    }
+  },
+  {
+    "text": "Tokyo",
+    "intent": "city",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.3341790735721588
+    }
+  }
+]

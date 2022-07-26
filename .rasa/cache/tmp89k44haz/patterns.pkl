@@ -1,0 +1,10 @@
+[
+  {
+    "name": "disease",
+    "pattern": "(\\bDiabetes\\b|\\bDepression\\b|\\bSchizophrenia\\b|\\bAnxiety\\b|\\bAcne\\b|\\bPCOD\\b|\\bHormonal\\ imbalance\\b|\\bCommon\\ cold\\b|\\bBipolar\\ disorder\\b|\\bThyroid\\b)"
+  },
+  {
+    "name": "doctor_type",
+    "pattern": "(\\bGeneral\\ Practitioner\\ and\\ Endocrinologist\\b|\\bPsychiatrist\\b|\\bA\\ psychiatrist\\ experienced\\ in\\ treating\\ schizophrenia\\ usually\\ guides\\ treatment\\b|\\bDermatologists\\b|\\bGynecologist,\\ Endocrinologist\\ or\\ Reproductive\\ Endocrinologist\\b|\\bEndocrinologist\\b|\\bFamily\\ practice\\ physicians,\\ pediatricians,\\ and\\ internists\\b|\\bThyroidologists\\b)"
+  }
+]

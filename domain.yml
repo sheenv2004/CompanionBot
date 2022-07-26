@@ -8,13 +8,15 @@ intents:
   - greet
   - greet_with_name
   - mood
+  # - mood_great
+  # - mood_unhappy
   - nlu_fallback
   - out_of_scope
   - request_names
   - sad_reasons
   - send_email
   - weather
-  - city
+  # - city
   - query_knowledge_base
 forms:
   name_form:
@@ -167,6 +169,12 @@ slots:
     mappings:
     - type: from_entity
       entity: definition
+  cause:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: cause
   precaution:
     type: text
     influence_conversation: false

@@ -1,0 +1,192 @@
+version: "3.1"
+nlu:
+- intent: sad_reasons
+  examples: |
+    - I feel so lonely.
+    - I am so alone
+    - I am just sad, I am not sure about the reason.
+- intent: out_of_scope
+  examples: |
+    - I want to call a cab
+    - tell me a joke
+    - What is your favourite music?
+- intent: deny
+  examples: |
+    - don't like that
+    - no way
+    - no
+    - nope
+    - not really
+- intent: affirm
+  examples: |
+    - that sounds good
+    - Yes
+    - yeah
+    - yes
+    - correct
+    - indeed
+- intent: city
+  examples: |
+    - Sydney
+    - Newyork
+    - Delhi
+    - Belfast
+    - Belgium
+    - Tokyo
+- intent: goodbye
+  examples: |
+    - see you later
+    - goodbye
+    - cu
+    - bye
+    - see you around
+    - good night
+    - bye bye
+- intent: greet_with_name
+  examples: |
+    - goodevening bot
+    - hi chatbot
+    - goodmorning chatbot
+    - moin bot
+    - let's go bot
+    - hello there rasa
+    - hey dude bot
+    - good afternoon chatbot
+    - hey there bot
+- intent: greet
+  examples: |
+    - hi
+    - hey
+    - let's go
+    - hey dude
+    - good evening
+    - moin
+    - good morning
+    - hello there
+    - goodevening
+    - hello
+- intent: query_knowledge_base
+  examples: |
+    - What are the [symptoms](attribute) of [Diabetes](disease)
+    - list some [diseases]{"entity": "object_type", "value": "disease"}
+    - what are the [precautions]{"entity": "attribute", "value": "precaution"} for [Diabetes](disease)
+    - what [cures]{"entity": "attribute", "value": "cure"} [Diabetes](disease)
+    - do you know the [cure](attribute) of [Diabetes](disease)
+    - How to [diagnose]{"entity": "attribute", "value": "suggest_diagnosis"} [Diabetes](disease)
+    - can you name some [diseases]{"entity": "object_type", "value": "disease"} please?
+    - what is the [definition](attribute) of [Diabetes](disease)?
+    - What are the [risks]{"entity": "attribute", "value": "leads_to"} of [Diabetes] {"entity":"disease"}
+    - what is the [cause](attribute) of [Diabetes](disease)?
+- intent: mood
+  examples: |
+    - very sad
+    - well
+    - great
+    - so sad
+    - super sad
+    - super stoked
+    - I'm so sad
+    - nervous
+    - I am disappointed
+    - not very good
+    - I am so sad
+    - fine
+    - wonderful
+    - I am great
+    - so saad
+    - my day was horrible
+    - feeling like a king
+    - so perfect
+    - I am amazing
+    - bad
+    - good
+    - I am going to save the world
+    - so so perfect
+    - extremly sad
+    - unhappy
+    - not good
+- synonym: disease
+  examples: |
+    - diseases
+    - illness
+    - sickness
+- synonym: cure
+  examples: |
+    - cures
+    - heal
+    - restore
+    - revive
+    - make better
+- synonym: precaution
+  examples: |
+    - precautions
+    - protection
+    - safeguard
+    - caution
+    - prevent
+- synonym: doctor_type
+  examples: |
+    - Whom
+- synonym: suggest_diagnosis
+  examples: |
+    - diagnose
+- synonym: leads_to
+  examples: |
+    - risks
+    - give rise to
+    - bring about
+    - complications
+    - leads to
+- synonym: Definition
+  examples: |
+    - Define
+    - Explain
+    - Tell me about
+    - What
+    - definition
+- synonym: cause
+  examples: |
+    - reason
+    - why
+    - origin
+- synonym: doctor type
+  examples: |
+    - type of doctor
+    - kind of doctor
+    - which doctor
+    - What doctor
+    - doctor
+    - doctors
+- synonym: symptoms
+  examples: |
+    - ailment
+    - disorder
+    - malady
+    - symptom
+- synonym: Diagnose
+  examples: |
+    - identify
+    - find out
+    - recognize
+- lookup: disease
+  examples: |
+    - Diabetes
+    - Depression
+    - Schizophrenia
+    - Anxiety
+    - Acne
+    - PCOD
+    - Hormonal imbalance
+    - Common cold
+    - Bipolar disorder
+    - Thyroid
+- lookup: doctor_type
+  examples: |
+    - General Practitioner and Endocrinologist
+    - Psychiatrist
+    - A psychiatrist experienced in treating schizophrenia usually guides treatment
+    - Dermatologists
+    - Gynecologist, Endocrinologist or Reproductive Endocrinologist
+    - Endocrinologist
+    - Family practice physicians, pediatricians, and internists
+    - Thyroidologists

@@ -2,79 +2,79 @@
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
 stories:
-- story: happy path 1
-  steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
+# - story: happy path 1
+#   steps:
+#   - user: |
+#       hello there!
+#     intent: greet
+#   - action: utter_greet
+#   - user: |
+#       amazing
+#     intent: mood_great
+#   - action: utter_happy
 
-- story: happy path 2
-  steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+# - story: happy path 2
+#   steps:
+#   - user: |
+#       hello there!
+#     intent: greet
+#   - action: utter_greet
+#   - user: |
+#       amazing
+#     intent: mood_great
+#   - action: utter_happy
+#   - user: |
+#       bye-bye!
+#     intent: goodbye
+#   - action: utter_goodbye
 
-- story: sad path 1
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
+# - story: sad path 1
+#   steps:
+#   - user: |
+#       hello
+#     intent: greet
+#   - action: utter_greet
+#   - user: |
+#       not good
+#     intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - user: |
+#       yes
+#     intent: affirm
+#   - action: utter_happy
 
-- story: sad path 2
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
+# - story: sad path 2
+#   steps:
+#   - user: |
+#       hello
+#     intent: greet
+#   - action: utter_greet
+#   - user: |
+#       not good
+#     intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - user: |
+#       not really
+#     intent: deny
+#   - action: utter_goodbye
 
-- story: sad path 3
-  steps:
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
+# - story: sad path 3
+#   steps:
+#   - user: |
+#       hi
+#     intent: greet
+#   - action: utter_greet
+#   - user: |
+#       very terrible
+#     intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - user: |
+#       no
+#     intent: deny
+#   - action: utter_goodbye
 
 - story: say goodbye
   steps:
@@ -89,3 +89,207 @@ stories:
       are you a bot?
     intent: bot_challenge
   - action: utter_iamabot
+
+- story: Query knowledge base happy 1
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+     what [diseases]{"entity": "object_type", "value": "disease"} do you know about?
+    intent: query_knowledge_base
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - disease: diabetes
+
+- story: Query knowledge base happy 2
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+     what is the [cause]{"entity": "attribute", "value": "cause"} of [Diabetes]{"entity": "disease"}?
+    intent: query_knowledge_base
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - cause:  cause
+    - disease: diabetes
+
+- story: Query knowledge base happy 3
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+     what is the [remedy]{"entity": "attribute", "value": "cure"} for [Diabetes]{"entity": "disease"}
+    intent: query_knowledge_base
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - cause:  remedy
+    - disease: diabetes
+
+- story: Query knowledge base happy 4
+  steps:
+  - user: |
+     What [causes]{"entity": "attribute", "value": "cause"} [diabetes]{"entity": "disease"}?
+    intent: query_knowledge_base
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - cause:  causes
+    - disease: diabetes
+
+- story: Query knowledge base happy 5
+  steps:
+  - user: |
+      hello bot
+    intent: greet_with_name
+  - action: utter_ask_name
+  - action: name_form
+  - active_loop: name_form
+  - user: |
+      Ram 
+  - action: name_form
+  - active_loop: name_form
+  - user: |
+      Syam 
+
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: utter_greet_with_name
+  - user: |
+     How to [detect]{"entity":"attribute","value":"suggest_diagnosis"} [diabetes]{"entity":"disease"}?
+    intent: query_knowledge_base
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - suggest_diagnosis:  detect
+    - disease: diabetes
+
+- story: Weather happy 1
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+     what is the weather like?
+    intent: weather
+  - action: action_climate
+
+- story: emotion review analysis happy 1
+  steps:
+  - user: |
+      hello
+  - intent: greet
+  - action: utter_greet
+  - intent: mood
+  - action: action_emotion
+  - slot_was_set:
+    - emotion:  positive
+  - action: utter_based_on_emotion
+  - intent: sad_reasons
+  - action: utter_help_user
+  - user: |
+      Yes
+  - intent: affirm
+  - action: utter_play_music
+  - action: utter_goodbye
+
+- story: emotion review analysis happy 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood
+  - action: action_emotion
+  - slot_was_set:
+    - emotion:  negative
+  - action: utter_based_on_emotion
+  - intent: sad_reasons
+  - action: utter_help_user
+  - user: |
+      No
+  - intent: deny
+  - action: utter_call_help
+  - action: utter_goodbye
+
+
+- story: Sentiment analysis custom action
+  steps:
+  - user: |
+      hey 
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Super sad
+  - action: action_emotion
+  - slot_was_set:
+    - emotion: "negative"
+  - action: utter_based_on_emotion
+  - user: |
+      I have noone to talk to
+  - intent: sad_reasons
+  - action: utter_help_user
+  - user: |
+      Yes
+  - action: utter_play_music
+  - action: utter_goodbye
+
+- story: Sentiment analysis custom action with name
+  steps:
+  - user: |
+      hi bot
+    intent: greet_with_name
+  - action: utter_greet
+  - action: name_form
+  - active_loop: name_form
+  - user: |
+      james 
+  - action: name_form
+  - active_loop: name_form
+  - user: |
+      bond 
+
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: utter_greet_with_name
+  - user: |
+      I am good
+  - intent: mood
+  - action: action_emotion
+  - action: utter_based_on_emotion
+  - action: utter_goodbye
+
+- story: Sentimental analysis form
+  steps:
+  - intent: greet_with_name
+  # - action: utter_ask_name
+  # - intent: request_names
+  - action: name_form
+  - active_loop: name_form
+  - slot_was_set:
+    - requested_slot: first_name
+  - slot_was_set:
+    - first_name: sheen
+  - slot_was_set:
+    - requested_slot: last_name
+  - slot_was_set:
+    - last_name: varghese
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: utter_greet_with_name
+  - intent: mood
+  - action: action_emotion
+  - action: utter_based_on_emotion
+  - intent: sad_reasons
+  - action: utter_help_user
+
+- story: out-of-scope
+  steps:
+  - intent: nlu_fallback
+  - action: utter_out_of_scope
+

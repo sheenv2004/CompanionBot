@@ -1,0 +1,34 @@
+[
+  {
+    "text": "I am so alone",
+    "intent": "sad_reasons",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.9654979109764099
+    }
+  },
+  {
+    "text": "What is your favourite music?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "query_knowledge_base",
+      "confidence": 0.5714406967163086
+    }
+  },
+  {
+    "text": "nope",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.446713387966156
+    }
+  },
+  {
+    "text": "Dubai",
+    "intent": "city",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5624064803123474
+    }
+  }
+]

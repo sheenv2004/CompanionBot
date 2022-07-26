@@ -1,0 +1,145 @@
+version: "3.1"
+nlu:
+- intent: bot_challenge
+  examples: |
+    - are you a human?
+- intent: emotion_review
+  examples: |
+    - waste of time
+- intent: request_names
+  examples: |
+    - i want to give you my name
+- intent: send_email
+  examples: |
+    - email
+- intent: weather
+  examples: |
+    - Whats the weather like?
+- intent: sad_reasons
+  examples: |
+    - I am just sad, I am not sure about the reason.
+- intent: out_of_scope
+  examples: |
+    - tell me a joke
+- intent: deny
+  examples: |
+    - I don't think so
+- intent: affirm
+  examples: |
+    - indeed
+    - yep
+- intent: city
+  examples: |
+    - Tokyo
+    - Amsterdam
+- intent: goodbye
+  examples: |
+    - cu
+    - see you around
+- intent: greet
+  examples: |
+    - hey there
+    - hello
+- intent: greet_with_name
+  examples: |
+    - hello rasa
+    - good afternoon chatbot
+    - good evening bot
+- intent: query_knowledge_base
+  examples: |
+    - does [Diabetes](disease) have [cause](attribute)?
+    - What are the [symptoms](attribute) of [Diabetes](disease)
+- intent: mood
+  examples: |
+    - unhappy
+    - so so perfect
+    - fine
+    - I don't feel very well
+    - very sad
+    - my day was horrible
+    - perfect
+- synonym: disease
+  examples: |
+    - diseases
+    - illness
+    - sickness
+- synonym: cure
+  examples: |
+    - cures
+    - heal
+    - restore
+    - revive
+    - make better
+- synonym: precaution
+  examples: |
+    - precautions
+    - protection
+    - safeguard
+    - caution
+    - prevent
+- synonym: doctor_type
+  examples: |
+    - Whom
+- synonym: suggest_diagnosis
+  examples: |
+    - diagnose
+- synonym: leads_to
+  examples: |
+    - risks
+    - give rise to
+    - bring about
+    - complications
+    - leads to
+- synonym: Definition
+  examples: |
+    - Define
+    - Explain
+    - Tell me about
+    - What
+    - definition
+- synonym: cause
+  examples: |
+    - reason
+    - why
+    - origin
+- synonym: doctor type
+  examples: |
+    - type of doctor
+    - kind of doctor
+    - which doctor
+    - What doctor
+    - doctor
+    - doctors
+- synonym: symptoms
+  examples: |
+    - ailment
+    - disorder
+    - malady
+    - symptom
+- synonym: Diagnose
+  examples: |
+    - identify
+    - find out
+    - recognize
+- lookup: disease
+  examples: |
+    - Diabetes
+    - Depression
+    - Schizophrenia
+    - Anxiety
+    - Acne
+    - PCOD
+    - Hormonal imbalance
+    - Common cold
+    - Bipolar disorder
+    - Thyroid
+- lookup: doctor_type
+  examples: |
+    - General Practitioner and Endocrinologist
+    - Psychiatrist
+    - A psychiatrist experienced in treating schizophrenia usually guides treatment
+    - Dermatologists
+    - Gynecologist, Endocrinologist or Reproductive Endocrinologist
+    - Endocrinologist
+    - Family practice physicians, pediatricians, and internists
+    - Thyroidologists

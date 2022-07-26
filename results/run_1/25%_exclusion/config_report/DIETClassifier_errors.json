@@ -1,0 +1,29 @@
+[
+  {
+    "text": "does Diabetes have cause?",
+    "entities": [
+      {
+        "start": 5,
+        "end": 13,
+        "value": "Diabetes",
+        "entity": "disease"
+      },
+      {
+        "start": 19,
+        "end": 24,
+        "value": "cause",
+        "entity": "attribute"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "disease",
+        "start": 5,
+        "end": 13,
+        "confidence_entity": 0.8495546579360962,
+        "value": "Diabetes",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

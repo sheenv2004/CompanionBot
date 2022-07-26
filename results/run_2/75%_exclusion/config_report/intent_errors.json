@@ -1,0 +1,58 @@
+[
+  {
+    "text": "I am so alone",
+    "intent": "sad_reasons",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.8837506771087646
+    }
+  },
+  {
+    "text": "What is your favourite music?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "query_knowledge_base",
+      "confidence": 0.6031779646873474
+    }
+  },
+  {
+    "text": "y",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.7203271985054016
+    }
+  },
+  {
+    "text": "Dubai",
+    "intent": "city",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.721359372138977
+    }
+  },
+  {
+    "text": "Amsterdam",
+    "intent": "city",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.43171200156211853
+    }
+  },
+  {
+    "text": "I am amazing",
+    "intent": "mood",
+    "intent_prediction": {
+      "name": "sad_reasons",
+      "confidence": 0.24051237106323242
+    }
+  },
+  {
+    "text": "not very good",
+    "intent": "mood",
+    "intent_prediction": {
+      "name": "greet_with_name",
+      "confidence": 0.7333521842956543
+    }
+  }
+]

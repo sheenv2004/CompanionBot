@@ -1,0 +1,58 @@
+[
+  {
+    "text": "what cures Diabetes",
+    "entities": [
+      {
+        "start": 5,
+        "end": 10,
+        "value": "cure",
+        "entity": "attribute"
+      },
+      {
+        "start": 11,
+        "end": 19,
+        "value": "Diabetes",
+        "entity": "disease"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "disease",
+        "start": 11,
+        "end": 19,
+        "confidence_entity": 0.9968361854553223,
+        "value": "Diabetes",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What are the risks of [Diabetes] {\"entity\":\"disease\"}",
+    "entities": [
+      {
+        "start": 13,
+        "end": 18,
+        "value": "leads_to",
+        "entity": "attribute"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "disease",
+        "start": 23,
+        "end": 31,
+        "confidence_entity": 0.997873067855835,
+        "value": "Diabetes",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "object_type",
+        "start": 35,
+        "end": 51,
+        "confidence_entity": 0.9861602187156677,
+        "value": "entity\":\"disease",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

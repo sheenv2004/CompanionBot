@@ -1,0 +1,228 @@
+version: "3.1"
+nlu:
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - am I talking to a human?
+    - am I talking to a bot?
+- intent: emotion_review
+  examples: |
+    - terrible experience
+    - good movie
+    - boring movie
+- intent: request_names
+  examples: |
+    - give name
+    - you need to know my name
+    - do you know my name?
+- intent: send_email
+  examples: |
+    - Send an email
+    - Send email
+    - I want to to send email
+- intent: weather
+  examples: |
+    - How is the weather today?
+    - Weather
+    - What is the weather?
+- intent: sad_reasons
+  examples: |
+    - I am so alone
+    - It feels like my life is pointless.
+    - I feel so lonely.
+    - I have nobody to talk to.
+- intent: out_of_scope
+  examples: |
+    - Are you alive?
+    - What is your favourite music?
+    - Calculate 10+1?
+    - I want to call a cab
+- intent: deny
+  examples: |
+    - no way
+    - never
+    - don't like that
+    - not really
+    - nope
+    - n
+    - no
+- intent: affirm
+  examples: |
+    - Yes
+    - of course
+    - that sounds good
+    - correct
+    - y
+    - yes
+    - yeah
+- intent: city
+  examples: |
+    - Belfast
+    - Sydney
+    - Belgium
+    - Dubai
+    - Newyork
+    - London
+    - Delhi
+- intent: goodbye
+  examples: |
+    - bye bye
+    - have a nice day
+    - goodbye
+    - good night
+    - bye
+    - see you later
+    - cee you later
+    - good by
+- intent: greet
+  examples: |
+    - let's go
+    - hi
+    - hello there
+    - good evening
+    - moin
+    - good afternoon
+    - goodmorning
+    - hey
+    - hey dude
+    - goodevening
+    - good morning
+- intent: greet_with_name
+  examples: |
+    - good morning bot
+    - hi chatbot
+    - moin bot
+    - hey dude bot
+    - hey there bot
+    - hello there rasa
+    - let's go bot
+    - hey bot
+    - goodevening bot
+    - goodmorning chatbot
+- intent: query_knowledge_base
+  examples: |
+    - do you know the [cure](attribute) of [Diabetes](disease)
+    - what is the [cause](attribute) of [Diabetes](disease)?
+    - [Whom]{"entity": "attribute", "value": "doctor_type"} to consult for [Diabetes](disease)
+    - list some [diseases]{"entity": "object_type", "value": "disease"}
+    - what [cures]{"entity": "attribute", "value": "cure"} [Diabetes](disease)
+    - can you name some [diseases]{"entity": "object_type", "value": "disease"} please?
+    - what [diseases]{"entity": "object_type", "value": "disease"} do you know about?
+    - What are the [risks]{"entity": "attribute", "value": "leads_to"} of [Diabetes] {"entity":"disease"}
+    - what are the [precautions]{"entity": "attribute", "value": "precaution"} for [Diabetes](disease)
+    - How to [diagnose]{"entity": "attribute", "value": "suggest_diagnosis"} [Diabetes](disease)
+    - what is the [definition](attribute) of [Diabetes](disease)?
+- intent: mood
+  examples: |
+    - I am great
+    - so good
+    - not very good
+    - so perfect
+    - feeling like a king
+    - I am amazing
+    - well
+    - bad
+    - I am feeling very good
+    - super sad
+    - I am disappointed
+    - super stoked
+    - extremly sad
+    - sad
+    - not good
+    - nervous
+    - I'm so sad
+    - amazing
+    - I am sad
+    - great
+    - wonderful
+    - I am going to save the world
+    - so saad
+    - so sad
+    - good
+    - I am so sad
+    - extremely good
+- synonym: disease
+  examples: |
+    - diseases
+    - illness
+    - sickness
+- synonym: cure
+  examples: |
+    - cures
+    - heal
+    - restore
+    - revive
+    - make better
+- synonym: precaution
+  examples: |
+    - precautions
+    - protection
+    - safeguard
+    - caution
+    - prevent
+- synonym: doctor_type
+  examples: |
+    - Whom
+- synonym: suggest_diagnosis
+  examples: |
+    - diagnose
+- synonym: leads_to
+  examples: |
+    - risks
+    - give rise to
+    - bring about
+    - complications
+    - leads to
+- synonym: Definition
+  examples: |
+    - Define
+    - Explain
+    - Tell me about
+    - What
+    - definition
+- synonym: cause
+  examples: |
+    - reason
+    - why
+    - origin
+- synonym: doctor type
+  examples: |
+    - type of doctor
+    - kind of doctor
+    - which doctor
+    - What doctor
+    - doctor
+    - doctors
+- synonym: symptoms
+  examples: |
+    - ailment
+    - disorder
+    - malady
+    - symptom
+- synonym: Diagnose
+  examples: |
+    - identify
+    - find out
+    - recognize
+- lookup: disease
+  examples: |
+    - Diabetes
+    - Depression
+    - Schizophrenia
+    - Anxiety
+    - Acne
+    - PCOD
+    - Hormonal imbalance
+    - Common cold
+    - Bipolar disorder
+    - Thyroid
+- lookup: doctor_type
+  examples: |
+    - General Practitioner and Endocrinologist
+    - Psychiatrist
+    - A psychiatrist experienced in treating schizophrenia usually guides treatment
+    - Dermatologists
+    - Gynecologist, Endocrinologist or Reproductive Endocrinologist
+    - Endocrinologist
+    - Family practice physicians, pediatricians, and internists
+    - Thyroidologists

@@ -1,0 +1,29 @@
+[
+  {
+    "text": "What are the symptoms of Diabetes",
+    "entities": [
+      {
+        "start": 13,
+        "end": 21,
+        "value": "symptoms",
+        "entity": "attribute"
+      },
+      {
+        "start": 25,
+        "end": 33,
+        "value": "Diabetes",
+        "entity": "disease"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "disease",
+        "start": 25,
+        "end": 33,
+        "confidence_entity": 0.9740038514137268,
+        "value": "Diabetes",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

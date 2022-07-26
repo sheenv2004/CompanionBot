@@ -1,0 +1,92 @@
+[
+  {
+    "text": "what diseases do you know about?",
+    "entities": [
+      {
+        "start": 5,
+        "end": 13,
+        "value": "disease",
+        "entity": "object_type"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what is the cause of Diabetes?",
+    "entities": [
+      {
+        "start": 12,
+        "end": 17,
+        "value": "cause",
+        "entity": "attribute"
+      },
+      {
+        "start": 21,
+        "end": 29,
+        "value": "Diabetes",
+        "entity": "disease"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what is the remedy for Diabetes",
+    "entities": [
+      {
+        "text": "what is the remedy for Diabetes",
+        "start": 12,
+        "end": 18,
+        "entity": "attribute",
+        "value": "cure"
+      },
+      {
+        "text": "what is the remedy for Diabetes",
+        "start": 23,
+        "end": 31,
+        "entity": "disease",
+        "value": "Diabetes"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "What causes diabetes?",
+    "entities": [
+      {
+        "text": "What causes diabetes?",
+        "start": 5,
+        "end": 11,
+        "entity": "attribute",
+        "value": "cause"
+      },
+      {
+        "text": "What causes diabetes?",
+        "start": 12,
+        "end": 20,
+        "entity": "disease",
+        "value": "diabetes"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "How to detect diabetes?",
+    "entities": [
+      {
+        "text": "How to detect diabetes?",
+        "start": 7,
+        "end": 13,
+        "entity": "attribute",
+        "value": "suggest_diagnosis"
+      },
+      {
+        "text": "How to detect diabetes?",
+        "start": 14,
+        "end": 22,
+        "entity": "disease",
+        "value": "diabetes"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

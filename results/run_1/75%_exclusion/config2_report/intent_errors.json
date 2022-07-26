@@ -1,0 +1,90 @@
+[
+  {
+    "text": "It feels like my life is pointless.",
+    "intent": "sad_reasons",
+    "intent_prediction": {
+      "name": "query_knowledge_base",
+      "confidence": 0.40540581941604614
+    }
+  },
+  {
+    "text": "Are you alive?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.7581112384796143
+    }
+  },
+  {
+    "text": "I don't think so",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.6370134949684143
+    }
+  },
+  {
+    "text": "of course",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.5335768461227417
+    }
+  },
+  {
+    "text": "Dubai",
+    "intent": "city",
+    "intent_prediction": {
+      "name": "greet_with_name",
+      "confidence": 0.3320220112800598
+    }
+  },
+  {
+    "text": "Amsterdam",
+    "intent": "city",
+    "intent_prediction": {
+      "name": "query_knowledge_base",
+      "confidence": 0.30027180910110474
+    }
+  },
+  {
+    "text": "good by",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.9988356232643127
+    }
+  },
+  {
+    "text": "goodmorning",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.9998688697814941
+    }
+  },
+  {
+    "text": "good afternoon",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.9969342947006226
+    }
+  },
+  {
+    "text": "good evening bot",
+    "intent": "greet_with_name",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.9955774545669556
+    }
+  },
+  {
+    "text": "good morning bot",
+    "intent": "greet_with_name",
+    "intent_prediction": {
+      "name": "mood",
+      "confidence": 0.9872418642044067
+    }
+  }
+]

@@ -1,0 +1,131 @@
+version: "3.1"
+nlu:
+- intent: sad_reasons
+  examples: |
+    - It feels like my life is pointless.
+- intent: out_of_scope
+  examples: |
+    - Are you alive?
+- intent: deny
+  examples: |
+    - I don't think so
+    - n
+- intent: affirm
+  examples: |
+    - of course
+    - y
+- intent: city
+  examples: |
+    - Dubai
+    - Amsterdam
+- intent: goodbye
+  examples: |
+    - have a nice day
+    - good by
+- intent: greet
+  examples: |
+    - goodmorning
+    - good afternoon
+- intent: greet_with_name
+  examples: |
+    - good evening bot
+    - hey bot
+    - good morning bot
+- intent: query_knowledge_base
+  examples: |
+    - does [Diabetes](disease) have [cause](attribute)?
+    - what [diseases]{"entity": "object_type", "value": "disease"} do you know about?
+- intent: mood
+  examples: |
+    - perfect
+    - sad
+    - I am feeling very good
+    - amazing
+    - so good
+    - extremely good
+    - I don't feel very well
+- synonym: disease
+  examples: |
+    - diseases
+    - illness
+    - sickness
+- synonym: cure
+  examples: |
+    - cures
+    - heal
+    - restore
+    - revive
+    - make better
+- synonym: precaution
+  examples: |
+    - precautions
+    - protection
+    - safeguard
+    - caution
+    - prevent
+- synonym: doctor_type
+  examples: |
+    - Whom
+- synonym: suggest_diagnosis
+  examples: |
+    - diagnose
+- synonym: leads_to
+  examples: |
+    - risks
+    - give rise to
+    - bring about
+    - complications
+    - leads to
+- synonym: Definition
+  examples: |
+    - Define
+    - Explain
+    - Tell me about
+    - What
+    - definition
+- synonym: cause
+  examples: |
+    - reason
+    - why
+    - origin
+- synonym: doctor type
+  examples: |
+    - type of doctor
+    - kind of doctor
+    - which doctor
+    - What doctor
+    - doctor
+    - doctors
+- synonym: symptoms
+  examples: |
+    - ailment
+    - disorder
+    - malady
+    - symptom
+- synonym: Diagnose
+  examples: |
+    - identify
+    - find out
+    - recognize
+- lookup: disease
+  examples: |
+    - Diabetes
+    - Depression
+    - Schizophrenia
+    - Anxiety
+    - Acne
+    - PCOD
+    - Hormonal imbalance
+    - Common cold
+    - Bipolar disorder
+    - Thyroid
+- lookup: doctor_type
+  examples: |
+    - General Practitioner and Endocrinologist
+    - Psychiatrist
+    - A psychiatrist experienced in treating schizophrenia usually guides treatment
+    - Dermatologists
+    - Gynecologist, Endocrinologist or Reproductive Endocrinologist
+    - Endocrinologist
+    - Family practice physicians, pediatricians, and internists
+    - Thyroidologists
