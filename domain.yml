@@ -8,15 +8,13 @@ intents:
   - greet
   - greet_with_name
   - mood
-  # - mood_great
-  # - mood_unhappy
   - nlu_fallback
   - out_of_scope
   - request_names
   - sad_reasons
   - send_email
   - weather
-  # - city
+  - city
   - query_knowledge_base
 forms:
   name_form:
@@ -55,6 +53,7 @@ entities:
   - physical activity
   - name
   - definition
+  - cause
   - precaution
   - doctor_type
   - symptoms
@@ -70,6 +69,7 @@ entities:
   - start
   - Benefits
   - Motivation
+  - city
 slots:
   first_name:
     type: text
@@ -117,10 +117,10 @@ slots:
       conditions:
       - active_loop: email_form
         requested_slot: message
-  # city:
-  #   type: text
-  #   mappings:
-  #   - type: from_text  
+  city:
+    type: text
+    mappings:
+    - type: from_text  
   object_type:
     type: any
     influence_conversation: false
@@ -223,12 +223,12 @@ slots:
     mappings:
     - type: from_entity
       entity: Endurance
-  Strength:
-    type: text
-    influence_conversation: false
-    mappings:
-    - type: from_entity
-      entity: Strength
+  # Strength:
+  #   type: text
+  #   influence_conversation: false
+  #   mappings:
+  #   - type: from_entity
+  #     entity: Strength
   Balance:
     type: text
     influence_conversation: false
@@ -284,7 +284,7 @@ responses:
   - text: Bye
   # - text: Bye {first_name}
   utter_iamabot:
-  - text: I am a bot, powered by Rasa.
+  - text: I am companion bot. You can talk to me about how you feel, ask me about a weather update or ask me to send a quick email. I am still under development and your chats will help me improve!
   utter_curious_happy:
   - text: oh! I am happy to hear that. Would you tell me why? I am curious...
   utter_curious_sad:
@@ -328,6 +328,8 @@ responses:
       name: emotion
       value: negative
     text: oh! I am sad to hear that. Would you tell me why? I am curious...
+  utter_first_contact:
+  - text: "Hi, I am companion bot. You can talk to me about how you feel, ask me about a weather update or ask me to send a quick email. I am still under development and your chats will help me improve"
   utter_ask_rephrase:
   - text: "Sorry, I'm not sure I understand. Could you rephrase it?"
   - text: "Could you please rephrase your message? I didn't quite get that."

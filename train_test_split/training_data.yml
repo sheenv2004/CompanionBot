@@ -7,140 +7,140 @@ nlu:
     - am I talking to a bot?
 - intent: emotion_review
   examples: |
-    - terrible experience
     - good movie
     - boring movie
+    - terrible experience
 - intent: request_names
   examples: |
     - give name
-    - you need to know my name
     - do you know my name?
+    - i want to give you my name
 - intent: send_email
   examples: |
+    - email
     - Send an email
-    - Send email
     - I want to to send email
 - intent: weather
   examples: |
-    - How is the weather today?
     - Weather
+    - How is the weather today?
     - What is the weather?
 - intent: sad_reasons
   examples: |
     - I am so alone
-    - It feels like my life is pointless.
+    - I am just sad, I am not sure about the reason.
     - I feel so lonely.
     - I have nobody to talk to.
 - intent: out_of_scope
   examples: |
     - Are you alive?
-    - What is your favourite music?
     - Calculate 10+1?
-    - I want to call a cab
+    - tell me a joke
+    - What is your favourite music?
 - intent: deny
   examples: |
-    - no way
-    - never
-    - don't like that
-    - not really
-    - nope
     - n
+    - not really
+    - don't like that
+    - never
+    - nope
     - no
+    - no way
 - intent: affirm
   examples: |
-    - Yes
-    - of course
-    - that sounds good
-    - correct
     - y
-    - yes
     - yeah
+    - of course
+    - yes
+    - Yes
+    - indeed
+    - that sounds good
 - intent: city
   examples: |
-    - Belfast
-    - Sydney
-    - Belgium
-    - Dubai
+    - Amsterdam
     - Newyork
-    - London
+    - Tokyo
+    - Belgium
+    - Sydney
     - Delhi
+    - Belfast
 - intent: goodbye
   examples: |
-    - bye bye
-    - have a nice day
     - goodbye
-    - good night
-    - bye
-    - see you later
-    - cee you later
     - good by
+    - have a nice day
+    - cee you later
+    - bye bye
+    - see you around
+    - bye
+    - cu
 - intent: greet
   examples: |
-    - let's go
-    - hi
-    - hello there
     - good evening
-    - moin
-    - good afternoon
-    - goodmorning
-    - hey
-    - hey dude
-    - goodevening
     - good morning
+    - let's go
+    - goodmorning
+    - hello
+    - hey there
+    - good afternoon
+    - hello there
+    - hey
+    - goodevening
+    - hey dude
 - intent: greet_with_name
   examples: |
+    - goodmorning chatbot
     - good morning bot
-    - hi chatbot
-    - moin bot
+    - goodevening bot
+    - let's go bot
+    - good afternoon chatbot
+    - hey bot
+    - good evening bot
     - hey dude bot
     - hey there bot
-    - hello there rasa
-    - let's go bot
-    - hey bot
-    - goodevening bot
-    - goodmorning chatbot
+    - hello rasa
 - intent: query_knowledge_base
   examples: |
-    - do you know the [cure](attribute) of [Diabetes](disease)
-    - what is the [cause](attribute) of [Diabetes](disease)?
-    - [Whom]{"entity": "attribute", "value": "doctor_type"} to consult for [Diabetes](disease)
     - list some [diseases]{"entity": "object_type", "value": "disease"}
-    - what [cures]{"entity": "attribute", "value": "cure"} [Diabetes](disease)
-    - can you name some [diseases]{"entity": "object_type", "value": "disease"} please?
+    - How to [diagnose]{"entity": "attribute", "value": "suggest_diagnosis"} [Diabetes](disease)
     - what [diseases]{"entity": "object_type", "value": "disease"} do you know about?
+    - What are the [symptoms](attribute) of [Diabetes](disease)
+    - [Whom]{"entity": "attribute", "value": "doctor_type"} to consult for [Diabetes](disease)
     - What are the [risks]{"entity": "attribute", "value": "leads_to"} of [Diabetes] {"entity":"disease"}
     - what are the [precautions]{"entity": "attribute", "value": "precaution"} for [Diabetes](disease)
-    - How to [diagnose]{"entity": "attribute", "value": "suggest_diagnosis"} [Diabetes](disease)
-    - what is the [definition](attribute) of [Diabetes](disease)?
+    - what is the [cause](attribute) of [Diabetes](disease)?
+    - do you know the [cure](attribute) of [Diabetes](disease)
+    - does [Diabetes](disease) have [cause](attribute)?
+    - what [cures]{"entity": "attribute", "value": "cure"} [Diabetes](disease)
 - intent: mood
   examples: |
-    - I am great
-    - so good
-    - not very good
-    - so perfect
-    - feeling like a king
-    - I am amazing
-    - well
-    - bad
-    - I am feeling very good
+    - not good
+    - so so perfect
+    - fine
+    - so saad
     - super sad
+    - so good
+    - great
+    - perfect
+    - so sad
+    - I am sad
+    - I am great
+    - feeling like a king
+    - I am feeling very good
+    - extremly sad
+    - nervous
+    - unhappy
+    - very sad
+    - I am going to save the world
+    - well
+    - sad
     - I am disappointed
     - super stoked
-    - extremly sad
-    - sad
-    - not good
-    - nervous
-    - I'm so sad
-    - amazing
-    - I am sad
-    - great
-    - wonderful
-    - I am going to save the world
-    - so saad
-    - so sad
-    - good
-    - I am so sad
     - extremely good
+    - I am amazing
+    - not very good
+    - I'm so sad
+    - so perfect
 - synonym: disease
   examples: |
     - diseases

@@ -90,6 +90,7 @@ stories:
     intent: bot_challenge
   - action: utter_iamabot
 
+
 - story: Query knowledge base happy 1
   steps:
   - user: |

@@ -8,56 +8,56 @@ nlu:
     - waste of time
 - intent: request_names
   examples: |
-    - i want to give you my name
+    - you need to know my name
 - intent: send_email
   examples: |
-    - email
+    - Send email
 - intent: weather
   examples: |
     - Whats the weather like?
 - intent: sad_reasons
   examples: |
-    - I am just sad, I am not sure about the reason.
+    - It feels like my life is pointless.
 - intent: out_of_scope
   examples: |
-    - tell me a joke
+    - I want to call a cab
 - intent: deny
   examples: |
     - I don't think so
 - intent: affirm
   examples: |
-    - indeed
+    - correct
     - yep
 - intent: city
   examples: |
-    - Tokyo
-    - Amsterdam
+    - Dubai
+    - London
 - intent: goodbye
   examples: |
-    - cu
-    - see you around
+    - good night
+    - see you later
 - intent: greet
   examples: |
-    - hey there
-    - hello
+    - moin
+    - hi
 - intent: greet_with_name
   examples: |
-    - hello rasa
-    - good afternoon chatbot
-    - good evening bot
+    - hi chatbot
+    - moin bot
+    - hello there rasa
 - intent: query_knowledge_base
   examples: |
-    - does [Diabetes](disease) have [cause](attribute)?
-    - What are the [symptoms](attribute) of [Diabetes](disease)
+    - can you name some [diseases]{"entity": "object_type", "value": "disease"} please?
+    - what is the [definition](attribute) of [Diabetes](disease)?
 - intent: mood
   examples: |
-    - unhappy
-    - so so perfect
-    - fine
     - I don't feel very well
-    - very sad
     - my day was horrible
-    - perfect
+    - wonderful
+    - good
+    - I am so sad
+    - amazing
+    - bad
 - synonym: disease
   examples: |
     - diseases

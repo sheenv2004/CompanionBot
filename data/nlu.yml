@@ -69,6 +69,10 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - who are you?
+    - what are you?
+    - what can you do?
+    - what do you know?
 - intent: emotion_review
   examples: |
     - good movie
@@ -154,6 +158,7 @@ nlu:
     - Belgium
     - Tokyo
     - Amsterdam
+    - Berlin
 - intent: query_knowledge_base
   examples: |
       - what [diseases]{"entity": "object_type", "value": "disease"} do you know about?
@@ -164,6 +169,7 @@ nlu:
       - does [Diabetes]{"entity": "disease"} have [cause]{"entity": "attribute", "value": "cause"}?
       - what is the [cause]{"entity": "attribute", "value": "cause"} of [Diabetes]{"entity": "disease"}?
       - what is the [definition]{"entity": "attribute", "value": "definition"} of [Diabetes]{"entity": "disease"}?
+      - define [definition]{"entity": "attribute", "value": "definition"} [Diabetes]{"entity": "disease"}?
       - what are the [precautions]{"entity": "attribute", "value": "precaution"} for [Diabetes]{"entity": "disease"}
       - [Whom]{"entity": "attribute", "value": "doctor_type"} to consult for [Diabetes]{"entity":"disease"}
       - What are the [symptoms]{"entity":"attribute","value":"symptoms"} of [Diabetes]{"entity":"disease"}

@@ -7,9 +7,7 @@ def weather(city):
     # print(city)
     json_data = requests.get(url).json()
     format_add = json_data['main']
-    # print(format_add)
-    # print("Weather is {0} Temperature is mininum {1} Celcius and maximum is {2} Celcius".format(
-    #     json_data['weather'][0]['main'],int(format_add['temp_min']-273),int(format_add['temp_max']-272)))
+    # print(format_add)   
     w="Weather is {0} Temperature is mininum {1} Celcius and maximum is {2} Celcius".format(
         json_data['weather'][0]['main'],int(format_add['temp_min']-273),int(format_add['temp_max']-272))
     return w

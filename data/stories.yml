@@ -2,65 +2,9 @@ version: "3.1"
 
 stories:
 
-# - story: happy path
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: mood_great
-#   - action: utter_happy
-
-# - story: sad path 1
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: mood_unhappy
-#   - action: utter_cheer_up
-#   - action: utter_did_that_help
-#   - intent: affirm
-#   - action: utter_happy
-
-# - story: sad path 2
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: mood_unhappy
-#   - action: utter_cheer_up
-#   - action: utter_did_that_help
-#   - intent: deny
-#   - action: utter_goodbye
-
-# - story: emotion movie review
-#   steps:
-#   - intent: emotion_review
-#   # - slot_was_set:
-#   #    - emotion: 
-#   - action: action_emotion
-#   - action: utter_based_on_emotion
-# - story: interactive story 1
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: request_names
-#   - action: name_form
-#   - active_loop: name_form
-#   - slot_was_set:
-#     - requested_slot: first_name
-#   - slot_was_set:
-#     - first_name: sheen
-#   - slot_was_set:
-#     - requested_slot: last_name
-#   - slot_was_set:
-#     - last_name: varghese
-#   - slot_was_set:
-#     - requested_slot: null
-#   - active_loop: null
-#   - action: utter_submit
-#   - action: utter_slots_values
 - story: interactive story 1
   steps:
   - intent: greet_with_name
-  # - action: utter_ask_name
-  # - intent: request_names
   - action: name_form
   - active_loop: name_form
   - slot_was_set:
@@ -127,8 +71,9 @@ stories:
   - action: utter_greet
   - intent: weather
   # - action: utter_city
-  # - slot_was_set:
-  #   - city: Belfast
+  # - intent: city
+  - slot_was_set:
+    - city: Belfast
   - action: action_climate
 
 - story: knowledge base happy path

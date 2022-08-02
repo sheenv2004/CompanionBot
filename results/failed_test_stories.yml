@@ -1,1 +1,132 @@
-# None of the test stories failed - all good!
+version: "3.1"
+stories:
+- story: emotion review analysis happy 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood
+  - action: action_emotion
+  - slot_was_set:
+    - emotion: negative
+  - action: utter_based_on_emotion
+  - intent: sad_reasons
+  - action: utter_help_user
+  - user: |-
+      No
+  - action: action_listen  # predicted: utter_goodbye
+  - intent: deny
+  - action: utter_call_help
+  - action: utter_goodbye
+- story: Sentiment analysis custom action (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - user: |-
+      Super sad
+  - action: action_emotion  # predicted: action_default_fallback
+  - slot_was_set:
+    - emotion: negative
+  - action: utter_based_on_emotion
+  - user: |-
+      I have noone to talk to
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: sad_reasons
+  - action: utter_help_user
+  - user: |-
+      Yes
+  - action: utter_play_music  # predicted: utter_goodbye
+  - action: utter_goodbye
+- story: Sentiment analysis custom action with name (.\tests\test_stories.yml)
+  steps:
+  - intent: greet_with_name
+  - action: utter_greet  # predicted: name_form
+  - action: name_form  # predicted: action_listen
+  - active_loop: name_form
+  - active_loop: name_form
+  - user: |-
+      bond
+  - action: utter_submit  # predicted: action_default_fallback
+  - action: utter_slots_values
+  - action: utter_greet_with_name
+  - user: |-
+      I am good
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: mood
+  - action: action_emotion
+  - action: utter_based_on_emotion
+  - action: utter_goodbye  # predicted: action_listen
+- story: Query knowledge base happy 3 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: query_knowledge_base
+    entities:
+    - disease: Diabetes
+  - slot_was_set:
+    - attribute: cure
+  - slot_was_set:
+    - disease: Diabetes
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - cause: remedy
+  - slot_was_set:
+    - disease: diabetes
+- story: Query knowledge base happy 4 (.\tests\test_stories.yml)
+  steps:
+  - intent: query_knowledge_base
+    entities:
+    - attribute: cause
+    - disease: diabetes
+  - slot_was_set:
+    - attribute: cause
+  - slot_was_set:
+    - disease: diabetes
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - cause: causes
+  - slot_was_set:
+    - disease: diabetes
+- story: Query knowledge base happy 5 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet_with_name
+  - action: utter_ask_name  # predicted: name_form
+  - action: name_form  # predicted: action_default_fallback
+  - active_loop: name_form
+  - active_loop: name_form
+  - user: |-
+      Syam
+  - action: utter_submit  # predicted: action_default_fallback
+  - action: utter_slots_values
+  - action: utter_greet_with_name
+  - intent: query_knowledge_base
+    entities:
+    - disease: diabetes
+  - slot_was_set:
+    - attribute: suggest_diagnosis
+  - slot_was_set:
+    - disease: diabetes
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - suggest_diagnosis: detect
+  - slot_was_set:
+    - disease: diabetes
+- story: emotion review analysis happy 1 (.\tests\test_stories.yml)
+  steps:
+  - user: |-
+      hello
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: greet
+  - action: utter_greet
+  - intent: mood
+  - action: action_emotion
+  - slot_was_set:
+    - emotion: positive
+  - action: utter_based_on_emotion
+  - intent: sad_reasons
+  - action: utter_help_user
+  - user: |-
+      Yes
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: affirm
+  - action: utter_play_music
+  - action: utter_goodbye
