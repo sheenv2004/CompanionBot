@@ -16,6 +16,8 @@ intents:
   - weather
   - city
   - query_knowledge_base
+  - ask_remind_call
+
 forms:
   name_form:
     required_slots:
@@ -43,6 +45,7 @@ actions:
   - action_climate
   - action_query_knowledge_base
   - utter_ask_rephrase
+
 entities:
   - emotion
   - object_type
@@ -333,6 +336,8 @@ responses:
   utter_ask_rephrase:
   - text: "Sorry, I'm not sure I understand. Could you rephrase it?"
   - text: "Could you please rephrase your message? I didn't quite get that."
+  utter_welcome:
+  - text: Hi there! What can I help you with today?
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

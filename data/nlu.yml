@@ -159,6 +159,15 @@ nlu:
     - Tokyo
     - Amsterdam
     - Berlin
+
+- intent: ask_remind_call
+  examples: |
+    - remind me to call John
+    - later I have to call Alan
+    - Please, remind me to call Vova
+    - please remind me to call Tanja
+    - I must not forget to call Juste
+    
 - intent: query_knowledge_base
   examples: |
       - what [diseases]{"entity": "object_type", "value": "disease"} do you know about?
