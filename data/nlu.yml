@@ -15,6 +15,9 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - hello, my name is [Tim](first_name)
+    - hey, I am [Jose](first_name)
+    - Good morning, Myself [Rajesh](first_name)
 - intent: greet_with_name
   examples: |
     - hey bot
@@ -42,6 +45,13 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - I have to go now
+    - I am leaving
+- intent: thanks
+  examples: |
+    - Thank you
+    - Thanks
+    - Thank you bot
 - intent: affirm
   examples: |
     - yes
@@ -81,9 +91,14 @@ nlu:
     - waste of time
 - intent: mood
   examples: |
+    - Feelig tired
+    - Its very hot
     - my day was horrible
     - I am sad
     - I don't feel very well
+    - I dont feel so good
+    - I am bored
+    - Rather boring
     - I am disappointed
     - super sad
     - I'm so sad
@@ -122,12 +137,20 @@ nlu:
     - I am just sad, I am not sure about the reason.
     - It feels like my life is pointless.
     - I am so alone
+    - I failed in my exam
+    - Family problems. you wont understand
+    - Job stress. i dont think i can handle it
+    - Existential crisis I think
+    - Oh its nothing. I feel closer to death.
+    - I feel so useless
+    - None loves me
 - intent: request_names
   examples: |
     - i want to give you my name
     - give name
     - you need to know my name
     - do you know my name?
+    - can you remember my name?
 - intent: out_of_scope
   examples: |
     - I want to call a cab
@@ -143,35 +166,31 @@ nlu:
     - email
 - intent: weather
   examples: |
-    - What is the weather?
-    - Whats the weather like?
-    - How is the weather today?
-    - Weather
-- intent: city
-  examples: |
-    - Delhi
-    - Belfast
-    - London
-    - Newyork
-    - Dubai
-    - Sydney
-    - Belgium
-    - Tokyo
-    - Amsterdam
-    - Berlin
+    - What is the weather in [London](city)?
+    - Whats the weather like in [Dublin](city)?
+    - Weather in [Belfast](city)?
+    - Will it rain today at [Paris](city)?
+    - Will it rain today at [Delhi](city)?
+    - weather in [Newyork](city)
+    - weather in [Berlin](city)
+    - weather in [Sydney](city)
 
-- intent: ask_remind_call
+- intent: user_irate
   examples: |
-    - remind me to call John
-    - later I have to call Alan
-    - Please, remind me to call Vova
-    - please remind me to call Tanja
-    - I must not forget to call Juste
-    
+    - Dumb bot
+    - Grow up
+    - useless
+    - you dont know anything
+    - Go die
+    - I dont care
+    - Why are you so stupid
 - intent: query_knowledge_base
   examples: |
       - what [diseases]{"entity": "object_type", "value": "disease"} do you know about?
+      - what [illnesses]{"entity": "object_type", "value": "disease"} do you know?
       - list some [diseases]{"entity": "object_type", "value": "disease"}
+      - Could you tell me [about]{"entity": "attribute", "value": "definition"} [diabetes]{"entity": "disease"}
+      - What do you know [about]{"entity": "attribute", "value": "definition"} [diabetes]{"entity": "disease"}
       - can you name some [diseases]{"entity": "object_type", "value": "disease"} please?
       - do you know the [cure]{"entity": "attribute", "value": "cure"} of [Diabetes]{"entity": "disease"}
       - what [cures]{"entity": "attribute", "value": "cure"} [Diabetes]{"entity": "disease"}
@@ -179,6 +198,7 @@ nlu:
       - what is the [cause]{"entity": "attribute", "value": "cause"} of [Diabetes]{"entity": "disease"}?
       - what is the [definition]{"entity": "attribute", "value": "definition"} of [Diabetes]{"entity": "disease"}?
       - define [definition]{"entity": "attribute", "value": "definition"} [Diabetes]{"entity": "disease"}?
+      - How can I [prevent]{"entity": "attribute", "value": "precaution"} [Diabetes]{"entity": "disease"}
       - what are the [precautions]{"entity": "attribute", "value": "precaution"} for [Diabetes]{"entity": "disease"}
       - [Whom]{"entity": "attribute", "value": "doctor_type"} to consult for [Diabetes]{"entity":"disease"}
       - What are the [symptoms]{"entity":"attribute","value":"symptoms"} of [Diabetes]{"entity":"disease"}

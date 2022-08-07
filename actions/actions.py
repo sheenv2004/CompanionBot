@@ -25,56 +25,6 @@ from Weather import weather
 from rasa_sdk.knowledge_base.storage import InMemoryKnowledgeBase
 from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
 
-
-import datetime
-from rasa_sdk.events import ReminderScheduled
-from rasa_sdk import Action
-
-class ActionSetReminder(Action):
-    """Schedules a reminder, supplied with the last message's entities."""
-
-    def name(self) -> Text:
-        return "action_set_reminder"
-
-    async def run(
-        self,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
-    ) -> List[Dict[Text, Any]]:
-
-        dispatcher.utter_message("I will remind you in 5 minutes.")
-
-        date = datetime.datetime.now() + datetime.timedelta(minutes=5)
-        entities = tracker.latest_message.get("entities")
-
-        reminder = ReminderScheduled(
-            "EXTERNAL_reminder",
-            trigger_date_time=date,
-            entities=entities,
-            name="my_reminder",
-            kill_on_user_message=False,
-        )
-
-        return [reminder]
-        
-class ActionReactToReminder(Action):
-    """Reminds the user to call someone."""
-
-    def name(self) -> Text:
-        return "action_react_to_reminder"
-
-    async def run(
-        self,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
-    ) -> List[Dict[Text, Any]]:
-
-        name = next(tracker.get_slot("PERSON"), "someone")
-        dispatcher.utter_message(f"Remember to call {name}!")
-
-        return []
 ## Action method to perform query on the in memory knowlwdge base
 class ActionMyKB(ActionQueryKnowledgeBase):
     def __init__(self):
@@ -131,8 +81,9 @@ class ActionClimate(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         city=tracker.get_slot("city")
-        city="Belfast"
-        temp=(weather("city"))
+        # city="Belfast"
+        print(city)
+        temp=(weather(city))
         dispatcher.utter_template("utter_temp",tracker,temp=temp)
         return []        
 ## Method to submit form

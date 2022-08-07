@@ -14,10 +14,10 @@ intents:
   - sad_reasons
   - send_email
   - weather
-  - city
+  # - city
   - query_knowledge_base
-  - ask_remind_call
-
+  - thanks
+  - user_irate
 forms:
   name_form:
     required_slots:
@@ -45,7 +45,9 @@ actions:
   - action_climate
   - action_query_knowledge_base
   - utter_ask_rephrase
-
+  - utter_welcome
+  - utter_apologies
+  - utter_remember_name
 entities:
   - emotion
   - object_type
@@ -73,6 +75,7 @@ entities:
   - Benefits
   - Motivation
   - city
+  
 slots:
   first_name:
     type: text
@@ -122,8 +125,10 @@ slots:
         requested_slot: message
   city:
     type: text
+    influence_conversation: true
     mappings:
-    - type: from_text  
+    - type: from_entity
+      entity: city  
   object_type:
     type: any
     influence_conversation: false
@@ -274,8 +279,13 @@ responses:
   - text: Hey! How are you feeling today?
   utter_ask_name:
   - text: Hi there!, What is your name?
+  - text: Could you tell me your name?
   utter_greet_with_name:
   - text: Hello {first_name}, How are you?
+  - text: Hey {first_name}, Hows it goin!
+  utter_remember_name:
+  - text: I can remember that your name is {first_name} {last_name}
+  - text: You are {first_name} {last_name}
   utter_cheer_up:
   - text: 'Here is something to cheer you up:'
     image: https://i.imgur.com/nGF1K8f.jpg
@@ -283,33 +293,51 @@ responses:
   - text: Did that help you?
   utter_happy:
   - text: Great {first_name}, carry on!
+  -  text: Alright then {first_name}!
   utter_goodbye:
   - text: Bye
+  - text: Buh-bye!
+  - text: Later Alligator!
+  - text: See ya!
+  utter_welcome:
+  - text: Welcome
+  - text: You are most welcome
+  - text: It is my pleasure
+  - text: Welcome {first_name}
   # - text: Bye {first_name}
   utter_iamabot:
-  - text: I am companion bot. You can talk to me about how you feel, ask me about a weather update or ask me to send a quick email. I am still under development and your chats will help me improve!
+  - text: I am companion bot. You can talk to me about how you feel, ask me about a weather update or ask me to send a quick email. I am still under development and your chats will help me improve!!
   utter_curious_happy:
   - text: oh! I am happy to hear that. Would you tell me why? I am curious...
   utter_curious_sad:
   - text: oh! I am very sad to hear that. Would you tell me why? I am curious...
+  - text: Would you like to tell me why?
+  - text: I am all ears
+  - text: Its alright, you can talk to me.
   utter_call_help:
   - text: Ok, If you need me please call and I will help you.
+  - text: I am here for you anytime.
+  - text: You can talk whenever you want to
   utter_help_user:
   - text: Thank you for sharing this negative moment! I am sorry that you are feeling bad. Would you like to hear some music?
+  - text: Oh. Life is like that sometimes. Music??
   utter_ask_first_name:
   - text: Hi there! What is your first name?
   utter_ask_last_name:
   - text: So {first_name}, what is your last name?
   utter_submit:
-  - text: Ok {first_name}. Thanks!
+  - text: Alright!
   utter_slots_values:
-  - text: I will remember that your name is {first_name} {last_name}!
+  - text: I can remember that your name is {first_name} {last_name}!
   utter_out_of_scope:
   - text: Sorry, I dont understand!
+  - text: Excuse me, I did not get you
   utter_play_song:
   - text: Ok,lets play your favourite music
+  - text: Alright then, lets hear it
   utter_play_music:
   - text: Ok,lets play your favourite tunes
+  - text: Alright then, lets hear it
   utter_ask_email:
   - text: Please provide the email ID whom you want to an email.
   utter_ask_subject:
@@ -319,7 +347,9 @@ responses:
   utter_city:
   - text: "What is the city name?"
   utter_temp:
-  - text: "{temp} at Belfast."
+  - text: "{temp} at {city}."
+  utter_apologies:
+  - text: "I am sorry for the negative experience. I will learn from this and serve you better in my next version"
   utter_based_on_emotion:
   - condition:
     - type: slot
@@ -336,8 +366,6 @@ responses:
   utter_ask_rephrase:
   - text: "Sorry, I'm not sure I understand. Could you rephrase it?"
   - text: "Could you please rephrase your message? I didn't quite get that."
-  utter_welcome:
-  - text: Hi there! What can I help you with today?
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

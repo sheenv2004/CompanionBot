@@ -73,7 +73,6 @@ pipeline:
     model: "en_core_web_sm"
   - name: SpacyTokenizer
   - name: SpacyEntityExtractor
-    dimensions: ["PERSON"]
   - name: SpacyFeaturizer
     pooling: mean
   - name: "LexicalSyntacticFeaturizer"

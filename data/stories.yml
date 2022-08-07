@@ -21,11 +21,44 @@ stories:
   - action: utter_submit
   - action: utter_slots_values
   - action: utter_greet_with_name
-  - intent: mood
-  - action: action_emotion
-  - action: utter_based_on_emotion
-  - intent: sad_reasons
-  - action: utter_help_user
+  # - intent: mood
+  # - action: action_emotion
+  # - action: utter_based_on_emotion
+  # - intent: sad_reasons
+  # - action: utter_help_user
+
+# - story: greet without name slot set
+#   steps:
+#   - intent: greet
+#   - action: utter_ask_first_name
+#   - slot_was_set:
+#     - first_name: sheen
+#   - action: utter_ask_last_name
+#   - slot_was_set:
+#     - last_name: varghese
+#   - action: utter_greet_with_name
+#   - intent: mood
+#   - action: utter_based_on_emotion
+#   - intent: sad_reasons
+#   - action: utter_help_user
+
+# - story: greet with name slot set
+#   steps:
+#   - intent: greet
+#   - action: utter_ask_first_name
+#   - intent: inform
+#   - slot_was_set:
+#     - first_name: sheen
+#   - action: utter_ask_last_name
+#   - slot_was_set:
+#     - last_name: varghese
+#   - intent: inform
+#   - action: utter_greet_with_name
+#   - intent: mood
+#   - action: utter_based_on_emotion
+#   - intent: sad_reasons
+#   - action: utter_help_user
+  
 
 - story: emotion review + greet
   steps:
@@ -84,6 +117,19 @@ stories:
   - action: action_query_knowledge_base
   - intent: goodbye
   - action: utter_goodbye
+
+# - story: remember name
+#   steps:
+#   - intent: request_names
+#   # - action: utter_remember_name
+#   - action: utter_submit
+#   - action: utter_slots_values
+#   - action: utter_greet_with_name
+
+- story: user irate
+  steps:
+  - intent: user_irate
+  - action: utter_apologies
 
 
 
